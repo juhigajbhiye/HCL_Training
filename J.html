@@ -1,0 +1,142 @@
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Assignment</title>
+</head>
+<body>
+<nav>
+	<div class="dropdown">
+	<span>Mouse over menu</span>
+	<div class="dropdown-content">
+	<p>Menu Optional</p>
+	</div>
+	</div>
+</nav>
+<form name="FormHtml" enctype="multipart/form-data" method="get">
+<table  width="30%" style="border: 2px red solid; padding: 5px">
+ <tr style="text-align: center;">
+ <th><b><font size=10 color=red>Information</font></b></th>
+ </tr>
+ 
+ <tr style="text-align: center; color: yellow; background-color: GREY ">
+ <th>Name</th>
+ <th> &nbsp; &nbsp;&nbsp;    </th>
+ <th><input type="text" name="name" id="uNa" placeholder="Enter name"><br></th>
+ </tr>
+ 
+ <tr style="text-align: center; color: yellow; background-color: GREY ">
+ <th>Address</th>
+ <th> &nbsp; &nbsp;&nbsp;    </th>
+ <th> <textarea rows="4" cols="50" id="uAdd"></textarea> </th>
+ </tr>
+ 
+ <tr style="text-align: center; color: yellow; background-color: GREY ">
+ <th>Gender</th>
+ <th> &nbsp; &nbsp; &nbsp;   </th>
+ <th><input type="radio" name="gender" value="male" id="uMale" class="rad"><label for="uMale"> Male</label>
+<input type="radio" name="gender" value="female" id="uFemale" class="rad"><label for="uFemale"> Female<label><br></th>
+ </tr>
+ 
+ <tr style="text-align: center; color: yellow; background-color: GREY ">
+ <th>Hobbies</th>
+ <th>  &nbsp; &nbsp; &nbsp;  </th>
+ <th>
+  <input type="checkbox" name="vehicle" value="Bike" id="uHobbies"><label for="uDancing">Dancing</label>
+  <input type="checkbox" name="vehicle" value="Bike" id="uHobbies"><label for="uSinging">Singing</label>
+  <input type="checkbox" name="vehicle" value="Bike" id="uHobbies"><label for="uReading">Reading</label>
+ </th>
+ </tr>
+ 
+ <tr style="text-align: center; color: yellow; background-color: GREY ">
+ <th>Country</th>
+ <th>  &nbsp; &nbsp; &nbsp;  </th>
+ <th> <select id=uCountry>
+  <option value="select">Select</option>
+  <option value="india">India</option>
+  <option value="korea">Korea</option>
+  <option value="thailand">Thailand</option>
+  <option value="england">England</option>
+</select> 
+ </th>
+ </tr>
+ 
+<tr style="text-align: center; color: yellow; background-color: GREY ">
+ <th>Dob</th>
+ <th> &nbsp; &nbsp; &nbsp;   </th>
+ <th><input type="date" name="Date"></th>        
+ </tr>     
+ 
+ <tr style="text-align: center; color: yellow; background-color: GREY ">
+ <th>Phone no.</th>
+ <th> &nbsp; &nbsp;&nbsp;    </th>
+ <th><input type="text" name="phone" placeholder="Enter Phone no."><br></th>
+ </tr>
+ 
+ <tr style="text-align: center; color: yellow; background-color: GREY ">
+ <th>Photograph</th>
+ <th> &nbsp; &nbsp;&nbsp;    </th>
+ <th><img src="index.jpg"> </th>
+ </tr>
+ 
+ <tr style="text-align: center; color: yellow; background-color: GREY ">
+ <th>How many years have you studied</th>
+ <th> &nbsp; &nbsp;&nbsp;    </th>
+ <th>10<input type="range" name="uNS" id="uNS" value="10" min="10" max="40" step="1">40<br></th>
+ </tr>
+ 
+ <tr style="text-align: center; color: yellow; background-color: GREY ">
+ <th>Email id</th>
+ <th> &nbsp; &nbsp;&nbsp;    </th>
+ <th><input type="text" name="email" placeholder="Enter email" id="uEmail" class="txt" required><br></th>
+ </tr>
+ 
+ <tr style="text-align: center; color: yellow; background-color: GREY ">
+ <th>Upload Image</th>
+ <th> &nbsp; &nbsp;&nbsp;    </th>
+ <th><input type="file" name="uPic" id="uPic" class="txt" required><br></th>
+ </tr>
+ 
+ <tr style="text-align: center; color: yellow; background-color: GREY ">
+ <th> <button type="button">Reset</button></th>
+ <th> &nbsp; &nbsp; &nbsp;   </th>
+ <th><button type="button">Submit</button> 
+ <button type="button" id="btnShowVal" values="ShowValues" class="btn" onclick="javascript:elemVal();"/>Show values</th>
+ </tr>
+ 
+ </table>
+ </form>
+ 
+ <script type="text/javascript">
+ function printChecked()
+ {
+ var items=document.getElementByName('uHobbies');
+ var selectedItems="";
+ for(var i=0;i<items.length;i++)
+ {
+ if((items[i].type=='checkbox')&&(items[i].checked==true))
+ {
+ selectedItems += items[i].value + "\n";
+ }
+ }
+ return selectedItems;
+ }
+ 
+ function elemVal(){
+ var myTextVal=document.getElementById("uNa");
+ var myAddrVal=document.getElementById("uAdd");
+ //var e=document.getElementById("uCountry);
+ //var myCountry=e.options[e.selectedIndex].value;
+ var studied=document.getElementById("uNS").value;
+ var hobbies=printChecked();
+ 
+ var myMsg="Value of Name Box is:"+myTextVal.value;
+ myMsg+="\nValue of Address Box is:"+myAddrVal.value;
+  //myMsg+="\nValue of Country is:"+myCountry;
+   myMsg+="\nValue of Year Studied is:"+studied.value;
+    myMsg+="\nValue of hobbies is:"+hobbies;
+ alert(myMsg);
+ return;
+ }
+ </script>
+</body>
+</html>
